@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Test</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="step1_click_img">1. Click Here !</string>
+    <string name="step2_click_yahoo">2. Search Yahoo.com and click it !</string>
+    <string name="step3_tap_first_item_back">3. Tap First Item To Back</string>
+
+    <string name="refresh">Refresh</string>
+    <string name="tip_network">Please switch on your network</string>
+    <string name="app_wrong_tips">Ops, there are sth wrong, you can contact developer with Email</string>
+
+</resources>

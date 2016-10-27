@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.alex9xu.mytest.activity.MainActivity"
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="3dp"
+        android:textColor="@color/white_d"
+        android:textSize="16sp"
+        android:text="@string/step2_click_yahoo"
+        android:background="@color/green_6"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+        <WebView
+            android:id="@+id/activity_main_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:scrollbars="none"/>
+        <ProgressBar
+            android:id="@+id/activity_main_progressBar"
+            style="@style/Base.Widget.AppCompat.ProgressBar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="gone"
+            android:layout_centerInParent="true"/>
+        <Button
+            android:id="@+id/activity_main_btn_refresh"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="@string/refresh"
+            android:visibility="gone"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+        <ImageView
+            android:id="@+id/activity_main_img_show"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray"/>
+        <TextView
+            android:id="@+id/activity_main_tvw_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:text="@string/step1_click_img"/>
+    </RelativeLayout>
+
+</LinearLayout>
