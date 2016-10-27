@@ -71,7 +71,7 @@ public class NumListActivity extends AppCompatActivity {
                     String numStr = NumUtils.getRandomNums(NUM_LENGTH);
                     NumCounter numCounter = new NumCounter();
                     numCounter.setNumber(numStr);
-                    numCounter.setTimes(NumUtils.countNum(numStr));
+                    numCounter.setTimes(NumUtils.countNumType2(numStr));
                     nNumStrList.add(numCounter);
                 }
                 runOnUiThread(new Runnable() {

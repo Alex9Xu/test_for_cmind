@@ -2,6 +2,10 @@ package com.alex9xu.mytest.utils;
 
 import android.support.v4.util.ArrayMap;
 
+import com.alex9xu.mytest.model.NumCounter;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -43,6 +47,81 @@ public class NumUtils {
         }
 
         return strBld.toString();
+    }
+
+    public static String countNumType2(String num) {
+        char[] chars = num.toCharArray();
+
+        List<NumCounter> counterList = new ArrayList<>();
+
+        for(int i=0; i<chars.length; i++) {
+            int counter = 0;
+            for(int j=i; j< chars.length; j++) {
+                if(chars[i] == chars[j]) {
+                    counter++;
+                } else {
+                    NumCounter numCounter = new NumCounter();
+                    numCounter.setTimes(numToWord(counter));
+                    if(counter > 1) {
+                        numCounter.setNumber(chars[i] + "s");
+                    } else {
+                        numCounter.setNumber(String.valueOf(chars[i]));
+                    }
+                    counterList.add(numCounter);
+                    break;
+                }
+            }
+        }
+
+        StringBuilder strBld = new StringBuilder();
+        for (NumCounter numCounter : counterList) {
+            strBld.append(numCounter.getTimes());
+            strBld.append(" ");
+            strBld.append(numCounter.getNumber());
+            strBld.append(", ");
+        }
+        strBld.delete(strBld.length()-2, strBld.length());
+        return strBld.toString();
+    }
+
+    public static String numToWord(int num) {
+        String word = "";
+        switch (num) {
+            case 0:
+                word = "zero";
+                break;
+            case 1:
+                word = "one";
+                break;
+            case 2:
+                word = "two";
+                break;
+            case 3:
+                word = "three";
+                break;
+            case 4:
+                word = "four";
+                break;
+            case 5:
+                word = "five";
+                break;
+            case 6:
+                word = "six";
+                break;
+            case 7:
+                word = "seven";
+                break;
+            case 8:
+                word = "eight";
+                break;
+            case 9:
+                word = "nine";
+                break;
+            default:
+                break;
+        }
+
+        return  word;
     }
 
 }
